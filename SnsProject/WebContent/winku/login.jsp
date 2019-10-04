@@ -15,7 +15,60 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/responsive.css">
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
 
+	$(function() {
+		// Email중복체크 ajax
+	    $("#joinEmail").keyup(function() {
+	        var email = $("#joinEmail").val();
+	       // alert("email: " + email);
+	        
+ 	        if (email.length > 0) {
+	            $.ajax({
+	                type : "post",
+	                url : "./EmailCheck.me",
+	                data : {email : email},
+	                dataType : "text",
+	                success : function(result) {
+	                	if (result == 1) {
+	                		$("#checkResult").html("이미 가입된 이메일 입니다.");
+	                		$("#checkResult").css("color", "red");
+	                	} else {
+	                		$("#checkResult").html("사용가능한 이메일 입니다.");
+	                		$("#checkResult").css("color", "blue");
+	                	}
+	                },
+	                error : function(data){
+	                	alert("error");
+	                }
+	            });
+	        }
+	    });
+	});
+	
+ 	function join() {
+ 		var f_name = $("#f_name").val();
+    	var l_name = $("#l_name").val();
+    	var pass = $("#joinPass").val();
+    	var gender = $("#gender").val();
+		var email = $("#joinEmail").val();
+		
+		$.ajax({
+            type : "post",
+            url : "./JoinMember.me",
+            data : {f_name : f_name, l_name : l_name, pass : pass, gender : gender, email : email},
+            dataType : "text",
+            success : function(result) {
+            	alert("success");
+            },
+            error : function(data){
+            	alert("error");
+            }
+        });
+	} 
+	
+</script>
 </head>
 <body>
 <!--<div class="se-pre-con"></div>-->
@@ -46,11 +99,11 @@
 							</p>
 						<form action="Main.me" method="post">
 							<div class="form-group">	
-							  <input type="text" id="input" required="required"/>
-							  <label class="control-label" for="input" id="email" name="email">이메일</label><i class="mtrl-select"></i>
+							  <input type="text" id="loginEmail" id="input" required="required"/>
+							  <label class="control-label" for="input" name="email">이메일</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="password" required="required"/>
+							  <input type="password" id="loginPass" required="required"/>
 							  <label class="control-label" for="input" name="pass">비밀번호</label><i class="mtrl-select"></i>
 							</div>
 							<div class="checkbox">
@@ -73,43 +126,44 @@
 								회원이 아니신가요? <br>
 								<a href="#" title=""> 사이트 먼저 살펴보기</a>
 							</p>
-						<form action="./EmailAuth.me" method="post">
+						<form action="./Join.me" method="post" id="joinFr" name="joinFr">
 							<div class="form-group">	
-							  <input type="text" required="required"/>
+							  <input type="text" id="f_name" required="required"/>
 							  <label class="control-label" for="input" name="f_name">성(First Name)</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="text" required="required"/>
+							  <input type="text" id="l_name" required="required"/>
 							  <label class="control-label" for="input" name="l_name">이름(Last Name)</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-group">	
-							  <input type="password" required="required"/>
+							  <input type="password" id="joinPass" required="required"/>
 							  <label class="control-label" for="input" name="pass">비밀번호</label><i class="mtrl-select"></i>
 							</div>
 							<div class="form-radio">
 							  <div class="radio">
 								<label>
-								  <input type="radio" name="gender" checked="checked"/><i class="check-box"></i>남자
+								  <input type="radio" id="gender" name="gender" checked="checked"/><i class="check-box"></i>남자
 								</label>
 							  </div>
 							  <div class="radio">
 								<label>
-								  <input type="radio" name="gender"/><i class="check-box"></i>여자
+								  <input type="radio" id="gender" name="gender"/><i class="check-box"></i>여자
 								</label>
 							  </div>
 							</div>
 							<div class="form-group">	
-							  <input type="text" required="required"/>
+							  <input type="text" id="joinEmail" required="required"/>
 							  <label class="control-label" for="input" name="email">이메일</label><i class="mtrl-select"></i>
+							  <div id="checkResult"></div>
 							</div>
 							<div class="checkbox">
 							  <label>
-								<input type="checkbox" checked="checked"/><i class="check-box"></i>약관에 동의하십니까?
+								<input type="checkbox" id="tosCheck" name="tosCheck" checked="checked"/><i class="check-box"></i>약관에 동의하십니까?
 							  </label>
 							</div>
 							<a href="#" title="" class="already-have">로그인 화면으로</a>
 							<div class="submit-btns">
-								<button class="mtr-btn signup" type="button"><span>가입하기</span></button>
+								<button class="mtr-btn signup" type="button" onclick="join();"><span>회원가입</span></button>
 							</div>
 						</form>
 					</div>

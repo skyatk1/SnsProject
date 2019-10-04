@@ -2,22 +2,15 @@ package sns.member.db;
 
 public class MemberDTO {
 	
-	private String id; //pk
+	private String email; //pk
+	private int email_auth; // 인증했을때 1 안했을때 0
 	private String password;
 	private int m_num; //pk(친구 목록 불러올 때 사용할 생각)
 	private String firstName;
 	private String lastName;
-	private String email;
-	private int gender;
+	private String gender;
 	
 	
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -48,13 +41,18 @@ public class MemberDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
+	public int getEmail_auth() {
+		return email_auth;
+	}
+	public void setEmail_auth(int emaul_auth) {
+		this.email_auth = emaul_auth;
+	}
 	
 	
 	

@@ -32,4 +32,68 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public int emailCheck(String email) {
+		int check = 0;
+		
+		try {
+			con = getCon();
+			
+			sql = "select * from member where email=?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, email);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				check = 1;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		
+		return check;
+	}
+	
+	public void insertMember(MemberDTO mdto) {
+		int m_num = 0;
+		
+		try {
+			con = getCon();
+			
+			sql = "select max(m_num) from member";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				m_num = rs.getInt(1) + 1;
+			}
+			
+			sql = "insert into member values (?, ?, ?, ?, ?, ?, ?)";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, mdto.getEmail());
+			pstmt.setInt(2, m_num);
+			pstmt.setString(3, mdto.getPassword());
+			pstmt.setString(4, mdto.getFirstName());
+			pstmt.setString(5, mdto.getLastName());
+			pstmt.setString(6, mdto.getGender());
+			pstmt.setInt(7, 0);
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeDB();
+		}
+		
+	}
 }
