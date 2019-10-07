@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,7 +9,7 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>Winku Social Network Toolkit</title>
-    <link rel="icon" href="../images/fav.png" type="image/png" sizes="16x16"> 
+    <link rel="icon" href="./images/fav.png" type="image/png" sizes="16x16"> 
     
     <link rel="stylesheet" href="./css/main.min.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -201,19 +201,23 @@
 						<h2 class="log-title">로그인</h2>
 						<form action="Main.me" method="post">
 							<div class="form-group">	
-							  <input type="text" id="loginEmail" id="input" required="required"/>
-							  <label class="control-label" for="input" name="email">이메일</label><i class="mtrl-select"></i>
+								<input type="text" id="loginEmail" id="input" required="required"/>
+								<label class="control-label" for="input" name="email">이메일</label><i class="mtrl-select"></i>
 							</div>
+							
 							<div class="form-group">	
-							  <input type="password" id="loginPass" required="required"/>
-							  <label class="control-label" for="input" name="pass">비밀번호</label><i class="mtrl-select"></i>
+								<input type="password" id="loginPass" required="required"/>
+								<label class="control-label" for="input" name="pass">비밀번호</label><i class="mtrl-select"></i>
 							</div>
+							
 							<div class="checkbox">
-							  <label>
-								<input type="checkbox" checked="checked"/><i class="check-box"></i>로그인 상태 유지
-							  </label>
+								<label>
+									<input type="checkbox" checked="checked"/><i class="check-box"></i>로그인 상태 유지
+								</label>
 							</div>
+							
 							<a href="#" title="" class="forgot-pwd">비밀번호를 잊으셨나요?</a>
+							
 							<div class="submit-btns">
 								<button class="mtr-btn signin" type="button"><span>로그인</span></button>
 								<button class="mtr-btn signup" type="button"><span>회원가입</span></button>
@@ -226,53 +230,54 @@
 						<h2 class="log-title">회원가입</h2>
 						<form action="./Join.me" method="post" id="joinFr" name="joinFr" onsubmit="return check();">
 							<div class="form-group">	
-							  <input type="text" id="f_name" required="required"/>
-							  <label class="control-label" for="input" name="f_name">성(First Name)</label><i class="mtrl-select"></i>
-							  <div id="f_nameCheck" class="joinCheck"></div>
+								<input type="text" id="f_name" required="required"/>
+								<label class="control-label" for="input" name="f_name">성(First Name)</label><i class="mtrl-select"></i>
+								<div id="f_nameCheck" class="joinCheck"></div>
 							</div>
 							
 							<div class="form-group">	
-							  <input type="text" id="l_name" required="required"/>
-							  <label class="control-label" for="input" name="l_name">이름(Last Name)</label><i class="mtrl-select"></i>
-							  <div id="l_nameCheck" class="joinCheck"></div>
+								<input type="text" id="l_name" required="required"/>
+								<label class="control-label" for="input" name="l_name">이름(Last Name)</label><i class="mtrl-select"></i>
+								<div id="l_nameCheck" class="joinCheck"></div>
 							</div>
 							
 							<div class="form-group">	
-							  <input type="password" id="joinPass" required="required"/>
-							  <label class="control-label" for="input" name="pass">비밀번호</label><i class="mtrl-select"></i>
-							  <div id="passCheck" class="joinCheck"></div>
+								<input type="password" id="joinPass" required="required"/>
+								<label class="control-label" for="input" name="pass">비밀번호</label><i class="mtrl-select"></i>
+								<div id="passCheck" class="joinCheck"></div>
 							</div>
 							
 							<div class="form-radio">
-							  <div class="radio">
-								<label>
-								  <input type="radio" id="gender" name="gender" value="남자"/><i class="check-box"></i>남자
-								</label>
-							  </div>
-							  <div class="radio">
-								<label>
-								  <input type="radio" id="gender" name="gender" value="여자"/><i class="check-box"></i>여자
-								</label>
-							  </div>
-							  <div id="genderCheck" class="joinCheck"></div>
+								<div class="radio">
+									<label>
+										<input type="radio" id="gender" name="gender" value="남자" /><i class="check-box"></i>남자
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" id="gender" name="gender" value="여자"/><i class="check-box"></i>여자
+									</label>
+								</div>
+								<div id="genderCheck" class="joinCheck"></div>
 							</div>
 							
 							<div class="form-group">	
-							  <input type="text" id="joinEmail" onkeyup="duplicateEmailCheck();" required="required"/>
-							  <label class="control-label" for="input" name="email">이메일</label><i class="mtrl-select"></i>
-							  <div id="emailCheck"></div>
+								<input type="text" id="joinEmail" onkeyup="duplicateEmailCheck();" required="required"/>
+								<label class="control-label" for="input" name="email">이메일</label><i class="mtrl-select"></i>
+								<div id="emailCheck"></div>
 							</div>
 							
 							<div class="checkbox">
-							  <label>
-								<input type="checkbox" id="tosCheck" name="tosCheck" checked="checked"/><i class="check-box"></i>약관에 동의하십니까?
-								<div id="tosCheckDiv"></div>
-							  </label>
+								<label>
+									<input type="checkbox" id="tosCheck" name="tosCheck" checked="checked"/><i class="check-box"></i>약관에 동의하십니까?
+									<div id="tosCheckDiv"></div>
+								</label>
 							</div>
 							
-							<a href="#" title="" class="already-have">로그인 화면으로</a>
+							<a href="#" title="" class="already-have">로그인 화면으로</a>
 							
 							<div class="submit-btns">
+								<!-- <input class="mtr-btn signup" type="submit" onclick="join();"><span>회원가입</span> -->
 								<button class="mtr-btn signup" type="button" onclick="join();"><span>회원가입</span></button>
 							</div>
 						</form>

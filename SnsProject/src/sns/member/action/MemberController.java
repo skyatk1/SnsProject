@@ -32,6 +32,7 @@ public class MemberController extends HttpServlet{
 			forward.setRedirect(false);
 			
 		} else if (command.equals("/EmailCheck.me")) {
+			// 이메일 중복 확인
 			action = new EmailCheckAction();
 			
 			try {
@@ -40,6 +41,7 @@ public class MemberController extends HttpServlet{
 				e.printStackTrace();
 			}
 		} else if (command.equals("/JoinMember.me")) {
+			// 회원가입
 			action = new JoinMemberAction();
 			
 			try {
@@ -48,11 +50,11 @@ public class MemberController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/authenticationCode.me")) {
+		} else if (command.equals("/AuthenticationCode.me")) {
 			// 인증하면 메일로 인증코드 -> 세션으로 설정해서 잠깐 저장
 			// 입력한 값이랑 비교해서 완료가되면 해당 세션 삭제.
-			forward.setPath("./authenticationCode.jsp");
-			forward.setRedirect(false);
+			/*forward.setPath("./member/authenticationCode.jsp");
+			forward.setRedirect(false);*/
 		}
 		
 		

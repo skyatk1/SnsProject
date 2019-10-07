@@ -33,6 +33,7 @@ public class MemberDAO {
 		}
 	}
 	
+	// 이메일 중복확인
 	public int emailCheck(String email) {
 		int check = 0;
 		
@@ -47,6 +48,7 @@ public class MemberDAO {
 			
 			rs = pstmt.executeQuery();
 			
+			// 저장된 이메일 값이 있을 경우 check = 1
 			if (rs.next()) {
 				check = 1;
 			}
@@ -60,6 +62,7 @@ public class MemberDAO {
 		return check;
 	}
 	
+	// 회원정보 DB 저장
 	public void insertMember(MemberDTO mdto) {
 		int m_num = 0;
 		
