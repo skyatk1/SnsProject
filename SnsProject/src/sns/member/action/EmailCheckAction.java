@@ -14,7 +14,6 @@ public class EmailCheckAction implements Action {
 		System.out.println("EmailCheckAction_execute()");
 		
 		String email = request.getParameter("email");
-		System.out.println("action - email: " + email);
 		
 		MemberDAO mdao = new MemberDAO();
 		int check = mdao.emailCheck(email);

@@ -1,5 +1,7 @@
 package sns.member.action;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,7 +16,6 @@ public class JoinMemberAction implements Action {
 		
 		MemberDTO mdto = new MemberDTO();
 		mdto.setEmail(request.getParameter("email"));
-		mdto.setEmail_auth(0);
 		mdto.setPassword(request.getParameter("pass"));
 		mdto.setFirstName(request.getParameter("f_name"));
 		mdto.setLastName(request.getParameter("l_name"));

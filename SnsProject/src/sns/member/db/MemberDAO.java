@@ -94,6 +94,5 @@ public class MemberDAO {
 		} finally {
 			closeDB();
 		}
-		
 	}
 }
