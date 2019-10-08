@@ -11,10 +11,10 @@
 	<title>Winku Social Network Toolkit</title>
     <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
     
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
 <div class="theme-layout">
@@ -40,6 +40,7 @@
 						<h2 class="log-title">인증코드</h2>
 							<p>
 								이메일을 확인해 주세요. <br>
+								이메일 인증이 되어야 가입이 완료됩니다.
 							</p>
 						<form action="Main.me" method="post">
 							<div class="form-group">	
@@ -58,7 +59,7 @@
 	</div>
 </div>
 	
-	<script src="js/main.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="../js/main.min.js"></script>
+	<script src="../js/script.js"></script>
 </body>
 </html>

@@ -220,7 +220,7 @@
 							
 							<div class="submit-btns">
 								<button class="mtr-btn signin" type="button"><span>로그인</span></button>
-								<button class="mtr-btn signup" type="button"><span>회원가입</span></button>
+								<button class="mtr-btn signup" type="button"><span>회원가입</span></button>
 							</div>
 						</form>
 					</div>
