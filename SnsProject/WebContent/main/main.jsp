@@ -196,24 +196,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- /웹페이지 오른쪽 채팅 바 -->
-
-		<!-- 	<div class="fixed-sidebar left">
-		<div class="menu-left">
-			<ul class="left-menu">
-				<li><a href="../newsfeed.html" title="Newsfeed Page" data-toggle="tooltip" data-placement="right"><i class="ti-magnet"></i></a></li>
-				<li><a href="../fav-page.html" title="favourit page" data-toggle="tooltip" data-placement="right"><i class="fa fa-star-o"></i></a></li>
-				<li><a href="../insights.html" title="Account Stats" data-toggle="tooltip" data-placement="right"><i class="ti-stats-up"></i></a></li>
-				<li><a href="../inbox.html" title="inbox" data-toggle="tooltip" data-placement="right"><i class="ti-import"></i></a></li>
-				<li><a href="../messages.html" title="Messages" data-toggle="tooltip" data-placement="right"><i class="ti-comment-alt"></i></a></li>
-				<li><a href="../edit-account-setting.html" title="Setting" data-toggle="tooltip" data-placement="right"><i class="ti-panel"></i></a></li>
-				<li><a href="../faq.html" title="Faq's" data-toggle="tooltip" data-placement="right"><i class="ti-light-bulb"></i></a></li>
-				<li><a href="../timeline-friends.html" title="Friends" data-toggle="tooltip" data-placement="right"><i class="ti-themify-favicon"></i></a></li>
-				<li><a href="../widgets.html" title="Widgets" data-toggle="tooltip" data-placement="right"><i class="ti-eraser"></i></a></li>
-				<li><a href="../notifications.html" title="Notification" data-toggle="tooltip" data-placement="right"><i class="ti-bookmark-alt"></i></a></li>
-			</ul>
-		</div>
-	</div>left sidebar menu -->
 
 		<section>
 		<div class="gap2 gray-bg">
@@ -224,9 +206,11 @@
 							<!-- 왼쪽 사이드 -->
 							<div class="col-lg-3">
 								<aside class="sidebar static left">
+								
 									<!-- Shortcuts -->
 									<jsp:include page="../inc/shortcuts.jsp" />
 									<!-- /Shortcuts -->
+									
 									<!-- Who's follownig -->
 									<div class="widget stick-widget">
 										<h4 class="widget-title">Who's follownig</h4>
@@ -296,49 +280,7 @@
 							<!-- 중간 -->
 							<div class="col-lg-6">
 								<!-- 글 작성 -->
-								<div class="central-meta new-pst">
-									<div class="new-postbox">
-										<figure>
-											<img src="./images/resources/admin2.jpg" alt="">
-										</figure>
-										<div class="newpst-input">
-											<form method="post">
-												<textarea rows="2" placeholder="write something"></textarea>
-												<div class="attachments">
-													<ul>
-														<li>
-															<i class="fa fa-music"></i>
-															<label class="fileContainer">
-																<input type="file">
-															</label>
-														</li>
-														<li>
-															<i class="fa fa-image"></i>
-															<label class="fileContainer">
-																<input type="file">
-															</label>
-														</li>
-														<li>
-															<i class="fa fa-video-camera"></i>
-															<label class="fileContainer">
-																<input type="file">
-															</label>
-														</li>
-														<li>
-															<i class="fa fa-camera"></i>
-															<label class="fileContainer">
-																<input type="file">
-															</label>
-														</li>
-														<li>
-															<button type="submit">Post</button>
-														</li>
-													</ul>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
+								<jsp:include page="../board/write.jsp" />
 								<!-- /글 작성 -->
 
 								<!-- 뉴스피드 -->
@@ -545,23 +487,6 @@
 														<div class="post-comt-box">
 															<form method="post">
 																<textarea placeholder="Post your comment"></textarea>
-																<div class="add-smiles">
-																	<span class="em em-expressionless" title="add icon"></span>
-																</div>
-																<div class="smiles-bunch">
-																	<i class="em em---1"></i>
-																	<i class="em em-smiley"></i>
-																	<i class="em em-anguished"></i>
-																	<i class="em em-laughing"></i>
-																	<i class="em em-angry"></i>
-																	<i class="em em-astonished"></i>
-																	<i class="em em-blush"></i>
-																	<i class="em em-disappointed"></i>
-																	<i class="em em-worried"></i>
-																	<i class="em em-kissing_heart"></i>
-																	<i class="em em-rage"></i>
-																	<i class="em em-stuck_out_tongue"></i>
-																</div>
 																<button type="submit"></button>
 															</form>
 														</div>
