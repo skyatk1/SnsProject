@@ -5372,9 +5372,9 @@ canvas {
     display: inline-block;
     position: relative;
     width: 100%;
-}
+} 
 
-.top-search form input {
+.top-search input {
     background: #f4f2f2 none repeat scroll 0 0;
     border: medium none;
     font-size: 13px;
